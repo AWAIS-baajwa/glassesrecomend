@@ -10,13 +10,17 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-ml-kit/face-detection": "^2.0.1",
+    "@react-native/new-app-screen": "0.85.0",
     "react": "19.2.3",
     "react-native": "0.85.0",
-    "@react-native/new-app-screen": "0.85.0",
-    "react-native-safe-area-context": "^5.5.2"
+    "react-native-permissions": "^5.5.1",
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-vision-camera": "^4.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-optional-chaining": "^7.28.6",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
     "@react-native-community/cli": "20.1.0",
