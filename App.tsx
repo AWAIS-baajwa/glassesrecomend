@@ -1,9 +1,11 @@
 import { StyleSheet, PermissionsAndroid } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Home from './src/screen/Home/index.js';
-import { useEffect } from 'react';
+import Onboarding from './src/screen/Onboarding/index.js';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [showOnboarding, setShowOnboarding] = useState(true);
   useEffect(() => {
     const handleCameraPermission = async () => {
       const status = await PermissionsAndroid.check(
@@ -23,6 +25,9 @@ function App() {
 
     handleCameraPermission();
   }, []);
+
+  if (showOnboarding)
+    return <Onboarding onFinish={() => setShowOnboarding(false)} />;
   return (
     <SafeAreaView style={styles.container}>
       <Home />
@@ -33,6 +38,7 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000000',
   },
 });
 
